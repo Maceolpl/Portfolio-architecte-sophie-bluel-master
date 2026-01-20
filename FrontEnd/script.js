@@ -1,26 +1,45 @@
-const gallery = document.querySelector(".gallery");
+import { getAndShowWorks } from "./api.js";
 
-// Appel à l'API
-fetch("http://localhost:5678/api/works")
-    .then(response => response.json())
-    .then(projects => {
-        const gallery = document.querySelector(".gallery");
+async function init() {
+    try {
+        await getAndShowWorks ();
+    }
+    catch (error){
+        console.error("erreur lors de l'initialisation de la page",error)
+    }
+};
 
-        projects.forEach(project => {
-            const figure = document.createElement("figure");
+init();
 
-            const img = document.createElement("img");
-            img.src = project.imageUrl;
-            img.alt = project.title;
+function filterWorks(categoryId) {
+    if (categoryId === 0) {
+        displayWorks(allWorks);
+        return;
+    }
 
-            const figcaption = document.createElement("figcaption");
-            figcaption.textContent = project.title;
+    const filtered = allWorks.filter(
+        work => work.categoryId === categoryId
+    );
 
-            figure.appendChild(img);
-            figure.appendChild(figcaption);
-            gallery.appendChild(figure);
-        });
-    })
-    .catch(error => {
-        console.error("Erreur lors du chargement des projets :", error);
+    displayWorks(filtered);
+}
+
+const filterTitles = document.querySelectorAll(".filtres h3");
+
+filterTitles.forEach(title => {
+    title.addEventListener("click", () => {
+        const categoryId = Number(title.dataset.id);
+
+        // gestion visuelle
+        filterTitles.forEach(t => t.classList.remove("active"));
+        title.classList.add("active");
+
+        // filtrage
+        filterWorks(categoryId);
     });
+});
+
+filterTitles.forEach(h3 => {
+    h3.setAttribute("role", "button");
+    h3.setAttribute("tabindex", "0");
+});
