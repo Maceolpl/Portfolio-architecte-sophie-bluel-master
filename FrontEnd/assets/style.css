@@ -290,43 +290,110 @@ footer nav ul {
 	margin: 2em
 }
 
-.filtres {
+#filters {
 	display: flex;
-	justify-content: center;
 	gap: 10px;
+	justify-content: center;
 	margin-bottom: 30px;
 }
 
-h3 {
-	display: flex;
-	height: 36px;
-	width: 99px;
-	justify-content: center;
-	align-items: center;
+.filter-button {
+	padding: 8px 16px;
 	border: 1px solid #1D6154;
 	border-radius: 20px;
-	font-family: Syne;
-	color: #1D6154;
-	font-size: 16px;
+	background-color: white;
+	color: #1b8a6b;
+	cursor: pointer;
 	font-weight: 700;
+	font-size: 16px;
+	color: #1D6154;
+	font-family: Syne;
 }
 
-.aprt {
-	width: 156px;
-}
-
-.hotels {
-	width: 197px;
-}
-
-h3:hover{
+.filter-button:hover {
 	background-color: #0E2F28;
 	border: 1px solid #0E2F28;
 	color: white
 }
 
-h3:active{
+.filter-button:active {
 	background-color: #1D6154;
 	border: 1px solid #1D6154;
 	color: white;
+}
+
+.login-container {
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.login-title {
+	justify-content: center;
+	display: flex;
+}
+
+.login-form {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+}
+
+.login-form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 20px;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	width: auto;
+	align-items: center;
+}
+
+/* Champs et bouton */
+.login-form input,
+.login-form button {
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 14px;
+}
+
+.login-form input {
+	width: 379px;
+	height: 51px;
+	padding-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+}
+
+.login-form button {
+	background-color: #1D6154;
+	border-radius: 20px;
+	color: white;
+	border: none;
+	cursor: pointer;
+	width: 179px;
+}
+
+.login-form button:hover {
+	background-color: #0056b3;
+}
+
+.footer-login {
+	display: flex;
+	justify-content: end;
+	margin-top: 480px;
+}
+
+.mention {
+	text-decoration: none;
+	color: black;
+}
+
+label{
+	width: 100%;
 }
