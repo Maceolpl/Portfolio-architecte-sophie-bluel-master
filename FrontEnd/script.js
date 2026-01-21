@@ -1,4 +1,5 @@
-import { getAndShowWorks, displayCategories } from "./api.js";
+import { getAndShowWorks } from "./api.js";
+import { displayCategories } from "./filters.js";
 
 async function init() {
     try {

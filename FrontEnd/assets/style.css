@@ -327,6 +327,7 @@ footer nav ul {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
+	margin: 180px
 }
 
 .login-title {
@@ -347,9 +348,10 @@ footer nav ul {
 	padding: 20px;
 	background-color: white;
 	border-radius: 10px;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
 	width: auto;
 	align-items: center;
+	margin-top: 20px;
 }
 
 /* Champs et bouton */
@@ -386,7 +388,7 @@ footer nav ul {
 .footer-login {
 	display: flex;
 	justify-content: end;
-	margin-top: 480px;
+	margin-top: 330px;
 }
 
 .mention {
