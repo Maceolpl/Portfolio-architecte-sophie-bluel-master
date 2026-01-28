@@ -21,4 +21,26 @@ async function getCategories() {
     }
 }
 
-export { getAndShowWorks, getCategories, allWorks };
+async function deleteWork(id) {
+    const token = localStorage.getItem("token");
+    if (!token) return;
+
+    try {
+        const response = await fetch(`http://localhost:5678/api/works/${id}`, {
+            method: "DELETE",
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error("Erreur lors de la suppression");
+        }
+
+        allWorks = allWorks.filter(work => work.id !== id);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export { getAndShowWorks, getCategories, allWorks, deleteWork };

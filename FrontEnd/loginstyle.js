@@ -47,6 +47,24 @@ function showEditButton() {
     portfolio.appendChild(editButton);
 }
 
+function setupModalClose() {
+    const modal = document.querySelector("#modal1");
+    const closeButton = modal.querySelector(".close-icon");
+
+    closeButton.addEventListener("click", () => {
+        modal.style.display = "none";
+        modal.setAttribute("aria-hidden", "true");
+    });
+
+    // Clic sur l’overlay
+    modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+            modal.setAttribute("aria-hidden", "true");
+        }
+    });
+}
+
 function handleEditMode() {
     const token = localStorage.getItem("token");
 
@@ -58,4 +76,4 @@ function handleEditMode() {
     }
 }
 
-export { handleEditMode };
+export { handleEditMode, setupModalClose };

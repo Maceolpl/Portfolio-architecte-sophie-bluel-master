@@ -397,23 +397,24 @@ footer nav ul {
 	color: black;
 }
 
-label{
+label {
 	width: 100%;
 }
-.mdp-oubli{
+
+.mdp-oubli {
 	color: black;
 }
 
-.edit-mode-banner{
-	    height: 59px;
-    background-color: black;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.edit-mode-banner {
+	height: 59px;
+	background-color: black;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.menu-link{
+.menu-link {
 	color: black;
 	text-decoration: none;
 }
@@ -422,20 +423,20 @@ label{
 	color: #B1663C;
 }
 
-h2{
+h2 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	gap: 20px;
 }
 
-.edit-button{
+.edit-button {
 	border: none;
 	font-size: 14px;
 	font-weight: 400;
 }
 
-.modal{
+.modal {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -447,13 +448,109 @@ h2{
 	background: rgba(0, 0, 0, 0.08);
 }
 
-.modal-wrapper{
+.modal-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	overflow: auto;
 	background-color: #FFF;
+	height: 658px;
 	width: 600px;
 	max-width: calc(100vw - 20px);
 	max-height: calc(100vh - 20px);
-	padding: 20px;
+	padding: 30px;
 
+}
+
+.modaltitle {
+	font-family: Work Sans;
+	font-size: 26px;
+	font-weight: 400;
+	color: black;
+	padding: 20px;
+}
+
+.close-modal {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: auto;
+}
+
+.close-modal button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	height: auto;
+	margin: 30px 0;
+}
+
+.modal-item {
+	position: relative;
+}
+
+.modal-item img {
+	width: 100%;
+	height: 100px;
+	object-fit: cover;
+}
+
+.delete-icon {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	background: black;
+	color: white;
+	border-radius: 2px;
+	padding: 5px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.modal2 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.08);
+}
+
+.add-photo-btn{
+	font-family: Syne;
+	font-weight: 700;
+	font-size: 14px;
+	color: white;
+	background-color:#1D6154;
+	border: 1px solid #1D6154;
+	border-radius: 30px;
+	width: 237px;
+	height: 36px;
+}
+
+hr{
+	border: 1px solid #B3B3B3;
+	width: 420px;
+}
+
+.modal-form{
+	height: 100%;
+	width: 100%;
+}
+
+#add-work-form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
