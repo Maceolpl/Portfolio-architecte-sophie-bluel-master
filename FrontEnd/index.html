@@ -50,22 +50,25 @@
 			<aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modaltitle"
 				style="display: none;">
 				<div class="modal-wrapper">
-					<div class="close-modal">
+					<div class="close-modal1">
 						<button class="close-icon"><i class="fa-solid fa-xmark fa-2xl"></i></button>
 					</div>
 					<h1 id="modaltitle" class="modaltitle">Galerie photo</h1>
 					<div class="modal-gallery">
 					</div>
-					<hr>
-					<button class="add-photo-btn">Ajouter une photo</button>
+					<div class="modal-footer">
+						<hr>
+						<button class="add-photo-btn">Ajouter une photo</button>
+					</div>
 				</div>
 			</aside>
 
 			<aside id="modal2" class="modal2" aria-hidden="true" role="dialog" aria-labelledby="modaltitle"
 				style="display: none;">
 				<div class="modal-wrapper">
-					<div class="close-modal">
-						<button class="back-icon" aria-label="Retour"><i class="fa-solid fa-arrow-left fa-lg"></i></button>
+					<div class="close-modal2">
+						<button class="back-icon" aria-label="Retour"><i
+								class="fa-solid fa-arrow-left fa-lg"></i></button>
 						<button class="close-icon"><i class="fa-solid fa-xmark fa-2xl"></i></button>
 					</div>
 					<h1 id="modaltitle" class="modaltitle">Ajout photo</h1>
@@ -75,24 +78,26 @@
 								<label for="image-input" class="image-label">
 									<img id="image-preview" style="display: none;" />
 									<i class="fa-regular fa-image"></i>
-									<span>+ Ajouter photo</span>
+									<span class="add-picture-button">+ Ajouter photo</span>
 									<p>jpg, png : 4mo max</p>
 								</label>
 								<input type="file" id="image-input" accept="image/png, image/jpeg" hidden>
 							</div>
+							<div>
+								<label for="title">Titre</label>
+								<input type="text" id="title" name="title">
 
-							<label for="title">Titre</label>
-							<input type="text" id="title" name="title">
+								<label for="category">Catégorie</label>
+								<select id="category"></select>
 
-							<label for="category">Catégorie</label>
-							<select id="category"></select>
-
-							<p class="form-error" style="display:none;"></p>
-
-							<button type="submit" class="submit-btn" disabled>Valider</button>
+								<p class="form-error" style="display:none;"></p>
+							</div>
+							<div class="modal-footer2">
+								<hr>
+								<button type="submit" class="submit-btn" disabled>Valider</button>
+							</div>
 						</form>
 					</div>
-					<button class="add-photo-btn-valid">Ajouter une photo</button>
 				</div>
 			</aside>
 
