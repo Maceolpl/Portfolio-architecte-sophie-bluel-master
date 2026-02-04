@@ -52,8 +52,8 @@ backButton.addEventListener("click", () => {
 
 async function loadCategories() {
     const categories = await getCategories();
-    categorySelect.innerHTML = "";
 
+    // On garde l'option "Choisir une catégorie"
     categories.forEach(cat => {
         const option = document.createElement("option");
         option.value = cat.id;
@@ -79,14 +79,17 @@ imageInput.addEventListener("change", () => {
 /* ---------------- VALIDATION ---------------- */
 
 function validateForm() {
-    if (
+    const isValid =
         imageInput.files.length > 0 &&
         titleInput.value.trim() !== "" &&
-        categorySelect.value !== ""
-    ) {
-        submitBtn.disabled = false;
+        categorySelect.value !== "";
+
+    submitBtn.disabled = !isValid;
+
+    if (isValid) {
+        submitBtn.classList.add("active");
     } else {
-        submitBtn.disabled = true;
+        submitBtn.classList.remove("active");
     }
 }
 
@@ -141,5 +144,6 @@ function resetForm() {
     form.reset();
     imagePreview.style.display = "none";
     submitBtn.disabled = true;
+    submitBtn.classList.remove("active");
     errorMsg.style.display = "none";
 }

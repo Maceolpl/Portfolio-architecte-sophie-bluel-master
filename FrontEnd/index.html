@@ -19,10 +19,11 @@
 		<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 		<nav>
 			<ul>
-				<li>projets</li>
-				<li>contact</li>
+				<li><a href="#project-link">projets</a></li>
+				<li><a href="#contact-link">contact</a></li>
 				<li><a href="login.html" class="menu-link">Login</a></li>
-				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+				<li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img
+							src="./assets/icons/instagram.png" alt="Instagram"></a></li>
 			</ul>
 		</nav>
 	</header>
@@ -43,7 +44,7 @@
 			</article>
 		</section>
 		<section id="portfolio">
-			<h2>Mes Projets</h2>
+			<h2 id="project-link">Mes Projets</h2>
 			<div id="filters" class="filters"></div>
 			</div>
 
@@ -88,7 +89,9 @@
 								<input type="text" id="title" name="title">
 
 								<label for="category">Catégorie</label>
-								<select id="category"></select>
+								<select id="category" required>
+									<option value="" disabled selected></option>
+								</select>
 
 								<p class="form-error" style="display:none;"></p>
 							</div>
@@ -105,7 +108,7 @@
 			</div>
 		</section>
 		<section id="contact">
-			<h2>Contact</h2>
+			<h2 id="contact-link">Contact</h2>
 			<p>Vous avez un projet ? Discutons-en !</p>
 			<form action="#" method="post">
 				<label for="name">Nom</label>

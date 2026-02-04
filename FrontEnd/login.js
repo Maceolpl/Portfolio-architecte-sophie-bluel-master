@@ -20,7 +20,7 @@ form.addEventListener('submit', async (event) => {
 
     if (!response.ok) {
       if (response.status === 401) {
-        throw new Error('Mot de passe incorrect');
+        throw new Error('Email ou mot de passe incorrect');
       }
       if (response.status === 404) {
         throw new Error('Utilisateur non trouvé');
