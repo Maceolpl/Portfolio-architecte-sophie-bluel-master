@@ -70,6 +70,24 @@ imageInput.addEventListener("change", () => {
     const file = imageInput.files[0];
     if (!file) return;
 
+    const allowedTypes = ["image/jpeg", "image/png"];
+    const maxSize = 4 * 1024 * 1024;
+
+    if (!allowedTypes.includes(file.type)) {
+        errorMsg.textContent = "Format d'image non autorisé (JPG ou PNG uniquement";
+        errorMsg.style.display = "block";
+        imageInput.value = "";
+        return;
+    }
+
+    if (file.size > maxSize) {
+        errorMsg.textContent = "L’image ne doit pas dépasser 4 Mo";
+        errorMsg.style.display = "block";
+        imageInput.value = "";
+        return;
+    }
+
+    errorMsg.style.display = "none";
     imagePreview.src = URL.createObjectURL(file);
     imagePreview.style.display = "block";
 
