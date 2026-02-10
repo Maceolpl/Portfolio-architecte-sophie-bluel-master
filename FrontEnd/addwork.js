@@ -18,7 +18,7 @@ const errorMsg = document.querySelector(".form-error");
 const token = localStorage.getItem("token")
 localStorage.getItem("token")
 
-/* ---------------- MODALES ---------------- */
+/* MODALEs*/
 
 addPhotoBtn.addEventListener("click", () => {
     modal1.style.display = "none";
@@ -48,7 +48,7 @@ backButton.addEventListener("click", () => {
     modal1.style.display = "flex";
 });
 
-/* ---------------- CATEGORIES ---------------- */
+/* CATEGORIES */
 
 async function loadCategories() {
     const categories = await getCategories();
