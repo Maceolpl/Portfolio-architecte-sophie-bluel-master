@@ -1,3 +1,5 @@
+import { openModal } from "./modal1.js";
+
 const isLoggedIn = !!localStorage.getItem("token");
 
 function showEditModeBanner() {
@@ -40,29 +42,10 @@ function showEditButton() {
     editButton.textContent = "🖊 Modifier";
 
     editButton.addEventListener("click", () => {
-        modal.style.display = "flex";
-        modal.setAttribute("aria-hidden", "false");
+        openModal(modal);
     });
 
     portfolio.appendChild(editButton);
-}
-
-function setupModalClose() {
-    const modal = document.querySelector("#modal1");
-    const closeButton = modal.querySelector(".close-icon");
-
-    closeButton.addEventListener("click", () => {
-        modal.style.display = "none";
-        modal.setAttribute("aria-hidden", "true");
-    });
-
-    // Clic sur l’overlay
-    modal.addEventListener("click", (event) => {
-        if (event.target === modal) {
-            modal.style.display = "none";
-            modal.setAttribute("aria-hidden", "true");
-        }
-    });
 }
 
 function handleEditMode() {
@@ -76,4 +59,4 @@ function handleEditMode() {
     }
 }
 
-export { handleEditMode, setupModalClose };
+export { handleEditMode };

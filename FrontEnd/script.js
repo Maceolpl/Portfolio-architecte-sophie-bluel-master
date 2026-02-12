@@ -1,7 +1,7 @@
 import { getAndShowWorks } from "./api.js";
 import { displayCategories } from "./filtersbtn.js";
 import { handleEditMode } from "./loginstyle.js";
-import { setupModalClose } from "./loginstyle.js";
+import { setupModalClose } from "./modal1.js";
 import { displayWorksInModal } from "./modal.js";
 
 
