@@ -1,33 +1,34 @@
-function openModal(modal) {
-    if (!modal) return;
+import { allWorks } from "./api.js";
+import { deleteWork } from "./api.js"
+import { getAndShowWorks } from "./api.js"
 
-    modal.style.display = "flex";
-    modal.setAttribute("aria-hidden", "false");
-}
+function displayWorksInModal() {
+  const gallery = document.querySelector(".modal-gallery");
+  gallery.innerHTML = "";
 
-function closeModal(modal) {
-    if (!modal) return;
+  allWorks.forEach(work => {
+    const item = document.createElement("div");
+    item.classList.add("modal-item");
 
-    modal.style.display = "none";
-    modal.setAttribute("aria-hidden", "true");
-}
+    const img = document.createElement("img");
+    img.src = work.imageUrl;
+    img.alt = work.title;
 
-function setupModalClose(modal) {
-    if (!modal) return;
+    const deleteBtn = document.createElement("i");
+    deleteBtn.classList.add("fa-solid", "fa-trash-can", "delete-icon");
 
-    const closeButton = modal.querySelector(".close-icon");
-
-    // Bouton X
-    closeButton.addEventListener("click", () => {
-        closeModal(modal);
+    deleteBtn.addEventListener("click", async () => {
+      await deleteWork(work.id);
+      displayWorksInModal();
+      getAndShowWorks();
     });
 
-    // Clic sur l’overlay
-    modal.addEventListener("click", (event) => {
-        if (event.target === modal) {
-            closeModal(modal);
-        }
-    });
+    item.appendChild(deleteBtn);
+    item.appendChild(img);
+    gallery.appendChild(item);
+  });
 }
 
-export { openModal, closeModal, setupModalClose };
+export { displayWorksInModal };
+
+

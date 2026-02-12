@@ -1,11 +1,7 @@
 import { getCategories } from "./api.js";
 import { getAndShowWorks } from "./api.js";
 
-const modal1 = document.getElementById("modal1");
 const modal2 = document.getElementById("modal2");
-
-const addPhotoBtn = document.querySelector(".add-photo-btn");
-const closeButtons = document.querySelectorAll(".close-icon");
 
 const form = document.getElementById("add-work-form");
 const imageInput = document.getElementById("image-input");
@@ -17,36 +13,6 @@ const errorMsg = document.querySelector(".form-error");
 
 const token = localStorage.getItem("token")
 localStorage.getItem("token")
-
-/* MODALEs*/
-
-addPhotoBtn.addEventListener("click", () => {
-    modal1.style.display = "none";
-    modal2.style.display = "flex";
-});
-
-closeButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-        modal1.style.display = "none";
-        modal2.style.display = "none";
-        resetForm();
-    });
-});
-
-window.addEventListener("click", (e) => {
-    if (e.target === modal1 || e.target === modal2) {
-        modal1.style.display = "none";
-        modal2.style.display = "none";
-        resetForm();
-    }
-});
-
-const backButton = document.querySelector("#modal2 .back-icon");
-
-backButton.addEventListener("click", () => {
-    modal2.style.display = "none";
-    modal1.style.display = "flex";
-});
 
 /* CATEGORIES */
 

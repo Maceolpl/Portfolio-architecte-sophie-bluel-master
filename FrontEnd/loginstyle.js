@@ -1,4 +1,4 @@
-import { openModal } from "./modal1.js";
+import { openModal } from "./openmodal1.js";
 
 const isLoggedIn = !!localStorage.getItem("token");
 
