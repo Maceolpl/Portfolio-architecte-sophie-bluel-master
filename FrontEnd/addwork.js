@@ -1,8 +1,8 @@
 import { getCategories } from "./api.js";
 import { getAndShowWorks } from "./api.js";
 
+function setupAddWorkForm() {
 const modal2 = document.getElementById("modal2");
-
 const form = document.getElementById("add-work-form");
 const imageInput = document.getElementById("image-input");
 const imagePreview = document.getElementById("image-preview");
@@ -12,14 +12,10 @@ const submitBtn = document.querySelector(".submit-btn");
 const errorMsg = document.querySelector(".form-error");
 
 const token = localStorage.getItem("token")
-localStorage.getItem("token")
-
-/* CATEGORIES */
 
 async function loadCategories() {
     const categories = await getCategories();
 
-    // On garde l'option "Choisir une catégorie"
     categories.forEach(cat => {
         const option = document.createElement("option");
         option.value = cat.id;
@@ -29,8 +25,6 @@ async function loadCategories() {
 }
 
 loadCategories();
-
-/* ---------------- PREVIEW IMAGE ---------------- */
 
 imageInput.addEventListener("change", () => {
     const file = imageInput.files[0];
@@ -60,8 +54,6 @@ imageInput.addEventListener("change", () => {
     validateForm();
 });
 
-/* ---------------- VALIDATION ---------------- */
-
 function validateForm() {
     const isValid =
         imageInput.files.length > 0 &&
@@ -79,8 +71,6 @@ function validateForm() {
 
 titleInput.addEventListener("input", validateForm);
 categorySelect.addEventListener("change", validateForm);
-
-/* ---------------- SUBMIT ---------------- */
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -109,7 +99,6 @@ form.addEventListener("submit", async (e) => {
             throw new Error("Erreur lors de l’envoi du formulaire");
         }
 
-        // Mise à jour galerie sans reload
         await getAndShowWorks();
 
         modal2.style.display = "none";
@@ -121,9 +110,6 @@ form.addEventListener("submit", async (e) => {
     }
 });
 
-
-/* ---------------- RESET ---------------- */
-
 function resetForm() {
     form.reset();
     imagePreview.style.display = "none";
@@ -131,3 +117,6 @@ function resetForm() {
     submitBtn.classList.remove("active");
     errorMsg.style.display = "none";
 }
+}
+
+export { setupAddWorkForm };
